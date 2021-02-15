@@ -1,8 +1,16 @@
+/*Cores para o sistema (Inspiração RICO)
+rgb(10 7 66) Aquele azul muito show/ Roxo, sei lá 
+rgb(88 17 44); laranja muito lindo tmnc
+rgb(255 41 0); Laranja do botão que fica massa pra krl
+rgb(255 172 156); Cor da letra no botão
+*/
 /*Global =======================*/
 
 :root{
-    --color-blue: #363f5f;
-
+    --color-blue:rgb(10, 7, 66);
+    --green:   rgb(88, 17, 44);;
+    --light-green:#3dd705;
+    --red:#e92929;
 }
 *{
     margin: 0;
@@ -42,7 +50,7 @@ html{
 /*Header =======================*/
 
 header{
-    background: #2D4A22;
+    background: rgb(10, 7, 66);
     padding: 2rem 0 10rem;
     text-align: center;
 }
@@ -57,7 +65,7 @@ header{
 h2{
     margin-top: 3.2rem;
     margin-bottom: 0.8rem;
-    color: #363f5f;
+    color: white;
 
     font-weight: normal;
 }
@@ -76,17 +84,59 @@ h2{
 /*Links ands buttons =======================*/
 
 a{
-    color: #49aa26;
+    color: var(--green);
     text-decoration: none;
 }
-a:hover{
-    color: #3bb705;
 
+a:hover:after{
+    text-decoration: underline;
+
+}
+
+button{
+    width: 100%;
+    height: 50px;
+
+    border: none;
+
+    color: rgb(255, 172, 156);
+    background: rgb(255, 41, 0);
+
+    padding: 0;
+
+    border-radius: 1.25rem;
+
+    cursor: pointer;
+}
+
+button:hover{
+    background: #ff5200;
 }
 
 .button.new{
+    display: inline-block;
     margin-bottom: .8rem;
 
+}
+
+
+.button.cancel{
+    color: var(--red);
+    border: 2px var(--red) solid;
+    border-radius: 0.25rem;
+
+    height: 50px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0.6;
+
+    cursor: pointer;
+}
+
+.button.cancel:hover{
+    opacity: 1;
 }
 /*Cards =======================*/
 
@@ -163,6 +213,7 @@ table th{
     padding: 1rem 2rem;
     color: #969cb3;
     text-align: left;
+    
 }
 
 
@@ -214,21 +265,65 @@ td.expense{
 }
 
 .modal{
-    background:#f0f2f5;
+    background: var(--color-blue);
+    
     padding: 2.4rem;
 
 
     position: relative;
 }
-/*footer ==============*/
+
+/*form ==============*/
+
+#form{
+    max-width: 500px;
+}
+
+#form h2{
+    margin-top: 0;
+}
+input{
+    border: none;
+    border-radius: 0.2rem;
+
+    padding: 0.8rem;
+
+    width: 100%;
+}
+
+.input-group{
+    margin-top: 0.8rem;
+}
+
+.input-group .help{
+    opacity: 0.4;
+}
+
+.input-group.actions{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.input-group.actions .button, 
+.input-group.actions button{
+    width: 48%;
+}
+
+/*footer ==============
 footer{
+    position: fixed;
+    justify-content: center;
+    align-items: center;
+    left: 0;
+    bottom: 0;
     text-align: center;
     padding: 4rem 0 2rem;
     color: var(--color-blue);
     opacity: 0.6;
     
     
-}
+}*/
 
 
 /*resposive ==================*/
